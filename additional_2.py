@@ -146,10 +146,10 @@ is_power_of_2(1024)
 # //     Рекурсія)
 
 def calc_sum_of_digits(num, interim_sum = 0):
-    while num >= 1:
+    if num >= 1:
         interim_sum += num % 10
         num = num // 10
-        calc_sum_of_digits(num, interim_sum)
+        return calc_sum_of_digits(num, interim_sum)
     return interim_sum
 
 print(calc_sum_of_digits(12345))
